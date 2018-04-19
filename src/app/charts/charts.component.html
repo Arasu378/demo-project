@@ -1,0 +1,21 @@
+<p>
+  charts works!
+</p>
+
+<!--<div *ngIf="chart">-->
+  <!--<canvas id="canvas">{{ chart }}</canvas>-->
+<!--</div>-->
+
+<!--<fusioncharts-->
+  <!--[width]="width"-->
+  <!--[height]="height"-->
+  <!--[type]="type"-->
+  <!--[dataFormat]="dataFormat"-->
+  <!--[dataSource]="dataSource">-->
+<!--</fusioncharts>-->
+<div class="container">
+  <nvd3 [options]="options" [data]="data"></nvd3>
+</div>
+<div class="container">
+  <nvd3 [options]="pie" [data]="piedata"></nvd3>
+</div>

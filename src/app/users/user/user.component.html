@@ -1,0 +1,76 @@
+<div class="card-margin">
+  <div class="container card">
+    <form [formGroup]="userForm" (ngSubmit)="insertUser()">
+      <div class="form-group container row">
+        <div class="col-md-6">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            placeholder="Enter First Name"
+            formControlName="firstName">
+          <span
+          *ngIf="userForm.get('firstName').invalid &&
+                 userForm.get('firstName').touched &&
+                 userForm.get('firstName').dirty"
+          >
+            <span>{{ getFirstNameError() }}</span>
+          </span>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" formControlName="lastName">
+          <span
+            *ngIf="userForm.get('lastName').invalid &&
+                 userForm.get('lastName').touched &&
+                 userForm.get('lastName').dirty"
+            class="is-invalid">
+            <span>{{ getLastNameError() }}</span>
+          </span>
+        </div>
+      </div>
+      <div class="container row">
+        <div class="form-group col">
+          <label for="phone">Phone</label>
+          <input type="number" class="form-control" id="phone" placeholder="Enter Phone" formControlName="phone">
+          <span
+            *ngIf="userForm.get('phone').invalid &&
+                 userForm.get('phone').touched &&
+                 userForm.get('phone').dirty"
+            class="is-invalid">
+            <span>{{ getPhoneError() }}</span>
+          </span>
+        </div>
+        <div class="form-group col">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter Email" formControlName="email">
+          <span
+            *ngIf="userForm.get('email').invalid &&
+                 userForm.get('email').touched &&
+                 userForm.get('email').dirty"
+            class="is-invalid">
+            <span>{{ getEmailError() }}</span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="profile">Profile</label>
+        <select id="profile" class="form-control" formControlName="profile">
+          <option value="" selected disabled hidden>Choose here</option>
+          <option>Admin</option>
+          <option>Technician</option>
+          <option>Manager</option>
+        </select>
+      </div>
+
+      <div class="form-group row container">
+        <div class="col-md-10">
+          <button type="submit" class="btn btn-primary" id="button_data" [disabled]="userForm.invalid">{{ buttonText }}</button>
+
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>

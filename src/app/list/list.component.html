@@ -1,0 +1,12 @@
+
+  <div class="container">
+<div class="row">
+  <button class="btn btn-primary btn-margin" [routerLink]="['/users']">Go To users</button>
+  <div class="col-12 col-md-8">
+    <app-list-item *ngFor="let restaurant of restaurantList" [restaurant]="restaurant"></app-list-item>
+  </div>
+  <div class="col-6 col-md-4 card-left-margin">
+    <router-outlet></router-outlet></div>
+
+</div>
+</div>

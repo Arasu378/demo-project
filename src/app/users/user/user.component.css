@@ -1,0 +1,9 @@
+.card-margin {
+  margin-top: 5%;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+.help-block{display:block;margin-top:5px;margin-bottom:10px;color:#737373}
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}

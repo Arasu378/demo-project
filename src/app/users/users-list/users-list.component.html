@@ -1,0 +1,33 @@
+<div class="container-fluid div-margin">
+  <div class="container">
+    <div class="row button-margin">
+      <button class="btn btn-primary" [routerLink]="['/user']">Add User</button>
+    </div>
+
+  </div>
+<!--<app-user-item *ngFor="let user of userList" [userItem]="user"></app-user-item>-->
+<div class="table-responsive-md">
+  <table class="table table-hover ">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Profile</th>
+    </tr>
+    </thead>
+    <tbody>
+   <tr *ngFor="let user of userList; let i = index;" style="cursor: pointer" (click)="onEdit(user)">
+     <th scope="row">{{i + 1}}</th>
+     <td>{{user.firstName}} {{user.lastName}}</td>
+     <td>{{user.email}}</td>
+     <td>{{user.phone}}</td>
+     <td>{{user.profile}}</td>
+   </tr>
+    </tbody>
+
+  </table>
+</div>
+
+</div>
